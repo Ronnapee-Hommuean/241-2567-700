@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /*.container {
+            background-color: red;
+        }
+
+        @media screen and (max-width: 768px) { //จะทำงานเมื่อขนาดหน้าจอเล็กกว่า 768px 
+            .container {
+                background-color: blue;
+            }
+            
+        } */
+
+        .container {
+            display: flex;
+        }
+
+        .container .item {
+            padding: 10px;
+            flex: 1;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;/* 1fr คือ 1 ส่วนของหน้าจอ*/
+        }
+
+        .grid-container .item{
+            padding: 10px;
+            background-color: yellow;
+            flex: 1;
+        }
+
+        /*tablet style*/
+        @media screen and (max-width: 768px) { /*ไม่เกิน 768px จะทำงาน*/
+            .container {
+                flex-direction: column;
+                background-color: red;
+            }
+            .grid-container {
+            grid-template-columns: 1fr 1fr;/* 1fr คือ 1 ส่วนของหน้าจอ*/
+            }
+            
+        }
+
+        /*mobile style*/
+        @media screen and (max-width: 640px) { /*ไม่เกิน 640px จะทำงาน*/
+            .grid-container {
+            grid-template-columns: 1fr ;/* 1fr คือ 1 ส่วนของหน้าจอ*/
+            }
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">Iem1</div>
+        <div class="item">Iem2</div>
+            
+    </div>
+
+    <div class="grid-container">
+        <div class="item">Iem1</div>
+        <div class="item">Iem2</div>
+        <div class="item">Iem3</div>
+        <div class="item">Iem4</div>
+        <div class="item">Iem5</div>
+        <div class="item">Iem6</div>
+    </div>
+
+    <!--<div class="container">
+        Hello world breakpoint
+    </div>-->
+
+    <!--<picture><!-- ใช้ในการแสดงรูปภาพ -
+        <source media="(max-width: 768px)" 
+        srcset="https://picsum.photos/seed/picsum/200/300"><!-- จะแสดงเมื่อขนาดหน้าจอเล็กกว่า 768px 
+        <img src="https://picsum.photos/id/237/200/300">
+    </picture>-->   
+    
+</body>
+</html>

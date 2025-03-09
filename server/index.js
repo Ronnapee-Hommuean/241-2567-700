@@ -23,6 +23,30 @@ const initMySQL = async () => {
   });
 }
 
+const validateData = (userData) => {
+  let errors = []
+  if (!userData.firstName) {
+      errors.push('กรุณากรอกชื่อ')
+  }
+  if (!userData.lastName) {
+      errors.push('กรุณากรอกนามสกุล')
+  }
+  if (!userData.age) {
+      errors.push('กรุณากรอกอายุ')
+  }
+  if (!userData.gender){
+      errors.push('กรุณาเลือกเพศ')
+  }
+  if (!userData.interests){
+      errors.push('กรุณาเลือกความสนใจ')
+  }
+  if (!userData.description){
+      errors.push('กรุณากรอกรายละเอียด')
+  }
+
+  return errors
+}
+
 /*app.get('/testdb', (req, res) => {
   let conn = mysql.createConnection({
     host: 'localhost',
@@ -78,18 +102,29 @@ app.get('/users', async (req, res) => {
 
 //path = POST /users สำหรับสร้าง users ใหม่บันทึกเข้าไป
 app.post('/users', async (req, res) => {
+
   try {
     let user = req.body;
+    const errors = validateData(user)
+    if(errors.length > 0){
+      throw {
+        message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+        errors: errors
+      }
+    }
     const results = await conn.query('INSERT INTO users SET ?', user);
     res.json({
       message: 'Create user successfully',
       data: results[0]
     });
+
   } catch (error) {
-    console.error('error : ', error.message)
+    const errorMessage = error.message || 'something went wrong'
+    const errors = error.errors || []
+    console.error('error message: ', error.message)
     res.status(500).json({
-      message: 'something went wrong',
-      errorMessage: error.message
+      message: errorMessage,
+      errors: errors
     })
   }
 

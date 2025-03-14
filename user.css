@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+
+body {
+    font-family: 'Kanit';
+    background-image: url('img/bguser.jpg');
+    background-size: cover;//ขยายภาพให้เต็มหน้าจอ
+    background-position: center;
+    background-repeat: no-repeat;//ไม่ให้ภาพซ้ำกัน
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(152, 210, 192,0.9);
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+.header {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 10px;
+    color: #f1f1f1;
+    text-shadow: 3px 6px 3px rgb(172, 129, 195);
+}
+
+.center {
+    text-align: right;
+}
+
+
+.button{
+    color: #404040;
+    border: none;//ไม่มีเส้นขอบ
+    font-size: 25px;
+    font-family: 'Kanit';
+    padding: 12px ;
+    border-radius: 40px;
+    margin-top: 10px;
+    background-color: #F6F8D5;
+}
+
+.button1:hover {
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.44);
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #FE4F2D;
+    border-radius: 10px;
+    transition: transform 0.5s ease;//เวลาเมาส์ไปมาจะมีเอฟเฟค
+}
+
+.button2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.44);
+    cursor: pointer;
+}
+
+.button3 {
+    background-color: #F6DC43;
+    border-radius: 10px;
+    transition: transform 0.5s ease;//เวลาเมาส์ไปมาจะมีเอฟเฟค
+}
+
+.button3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 4px 4px rgba(223, 174, 240, 0.44);
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;/* 1fr คือ 1 ส่วนของหน้าจอ*/
+    grid-template-row:auto ;
+    grid-gap: 5px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;//เอาเส้นขอบออก
+    table-layout: fixed;
+    text-align: center;
+}
+
+td,tr, th {
+    border: 3px solid;//เส้นขอบ
+    padding: 4px;
+    word-wrap: break-word;//ข้อความที่เกินจะขึ้นบรรทัดใหม่
+}
+
+.background{
+    font-size: 20px;
+    background-color:black;
+    color:white;
+    padding: 10px;
+}
+
+.background2{
+    background-color:lavender;
+    
+}
+
+.background2:hover {
+    background-color:#FFB433;
+}
+

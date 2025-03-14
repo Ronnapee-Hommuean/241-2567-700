@@ -42,13 +42,9 @@ window.onload = async () => {
                     interestDOMs[i].checked = true
                 }
             }
-
         } catch (error) {
             console.log('error', error);
         }
-
-
-
     }
 }
 

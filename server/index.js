@@ -86,14 +86,6 @@ const validateData = (userData) => {
 });*/
 
 
-/*
-GET /users สำหรับ get users ทั้งหมดที่บันทึกไว้
-POST /users สำหรับสร้าง users ใหม่บันทึกเข้าไป
-GET /users/:id สำหรับดึง users รายคนออกมา
-PUT /users/:id สำหรับแก้ไขข้อมูล users รายคน(ต้องระบุ id)
-DELETE /users/:id สำหรับลบ users รายคน(ต้องระบุ id)
-*/
-
 //path = GET /users สำหรับ get users ทั้งหมดที่บันทึกไว้
 app.get('/users', async (req, res) => {
   const results = await conn.query('SELECT * FROM users');
